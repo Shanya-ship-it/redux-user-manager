@@ -4,14 +4,10 @@ import user_img from './../data/user_img.png'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { editSingleUser } from "../store/userListSlice";
+import UserInput from "./UserInput";
 
 
-const EditUserForm = ({index}) => {
-
-
-    const list = useSelector(state => state.list.list);
-    const su = list[index];
-
+const EditUserForm = ({id, name, jobTitle, department, company}) => {
 
     const dispatch = useDispatch();
 
@@ -20,23 +16,16 @@ const EditUserForm = ({index}) => {
     const [inputJobtitle, setInputJobtitle] = useState("");
 
     const handleOnChangeCompany = (e) => {
-        
         setInputCompany(e.target.value);
     }
 
      const handleOnChangeDepartment = (e) => {
-        
         setInputDepartment(e.target.value);
-
     }
 
      const handleOnChangeJobtitle = (e) => {
-        
         setInputJobtitle(e.target.value);
-
     }
-
-    const id = list[index].id
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -49,38 +38,13 @@ const EditUserForm = ({index}) => {
 
     return(
         <div className="form">
-            <span>{su.name}</span>
+            <span>{name}</span>
             <div className="user__card">
                 <img className="user__img" src={user_img} alt="user__img"/>
-                <form className="user__form" onSubmit={handleSubmit}>    
-                    <label className="labels">
-                        <span>JobTitle: {su.jobTitle}</span>
-                        <input className="inputs"
-                        name="jobTitle"
-                        type="text"
-                        onChange={handleOnChangeJobtitle}
-                        value={inputJobtitle}
-                        />
-                    </label>
-                    <label className="labels">
-                        <span>Department: {su.department}</span>
-                        <input className="inputs"
-                        name="department"
-                        type="text"
-                        onChange={handleOnChangeDepartment}
-                        value={inputDepartment}
-                        />
-                    </label>
-                    <label className="labels">
-                        <span>Company: {su.company}</span>
-                        <input className="inputs"
-                        name="company"
-                        type="text"
-                        onChange={handleOnChangeCompany}
-                        value={inputCompany}
-                        />
-                    </label>
-
+                <form className="user__form" onSubmit={handleSubmit}> 
+                    <UserInput labelTitle={"Должность: " + jobTitle} handleOnChange={handleOnChangeJobtitle} inputValue={inputJobtitle}/>
+                    <UserInput labelTitle={"Отдел: " + department} handleOnChange={handleOnChangeDepartment} inputValue={inputDepartment}/>
+                    <UserInput labelTitle={"Компания: " + company} handleOnChange={handleOnChangeCompany} inputValue={inputCompany}/>
                     <button className="save__btn" type="submit">Save</button>
                 </form>
                 

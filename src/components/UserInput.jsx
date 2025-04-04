@@ -1,30 +1,18 @@
 import { useState } from "react";
 
-const UserInput = ({labelName, inputName, handleOnCSubmit}) => {
 
-
-    const [value, setValue] = useState("");
-    const handleOnChange = (e) => {
-        
-        setValue(e.target.value);
-        
-        const {name, value} = e.target;
-        console.log(name, value)
-
-    }
-
+const UserInput = ({labelTitle, handleOnChange, inputValue}) => {
+    
     return(
-        <label>
-            {labelName}: {inputName}
+        <label className="labels">
+            <span>{labelTitle}</span>
             <input
             className="inputs"
-            name={labelName}
+            name=""
             type="text"
             onChange={handleOnChange}
-            onSubmit={handleOnCSubmit}
-            value={value}
+            value={inputValue}
             />
-
         </label>
     )
 }
