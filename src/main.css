@@ -1,75 +1,67 @@
-.App{
-    background-color: rgb(226, 226, 226);
-    display: flex;
+.App {
+  background-color: rgb(226, 226, 226);
+  display: flex;
 }
 
 /*users list*/
 
 .users__list {
-    position: relative;
-    background-color: rgb(255, 255, 255);
-    width: 300px;
-    height: 290px;
-    border: solid 1px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    
-    margin:10px
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  height: 290px;
+  border: solid 1px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  margin: 10px;
 }
 
 .user__li {
-    display: block;
-    margin-top: 10px;
-    margin-left: 20px;
-
+  display: block;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
-.user__icon{
-    width: 20px;
+.user__icon {
+  width: 20px;
 }
-
-
 
 /*edit user form*/
 
 .form {
-    /* position: absolute;
+  /* position: absolute;
     top: 0px;
     left: 300px; */
-    background-color: rgb(255, 255, 255);
-    width: 800px;
-    height: 200px;
+  background-color: rgb(255, 255, 255);
+  width: 800px;
+  height: 200px;
 
-    margin: 10px;
-    
+  margin: 10px;
 }
 
-.user__card{
-    display: flex;
+.user__card {
+  display: flex;
 }
 
-.user__img{
-    width: 100px;
-    height: 100px;
-    margin: auto 0;
-    padding: 10px
+.user__img {
+  width: 100px;
+  height: 100px;
+  margin: auto 0;
+  padding: 10px;
 }
 
-.user__form{
-    margin-top: 20px
+.user__form {
+  margin-top: 20px;
 }
 
-
-.labels{
-    display: block;
+.labels {
+  display: block;
 }
-.inputs{
-    border: solid 1px #c7c7c7;
-    box-sizing: border-box;
-
+.inputs {
+  border: solid 1px #c7c7c7;
+  box-sizing: border-box;
 }
-.selected { 
-    background-color: rgb(123, 224, 255);
+.selected {
+  background-color: rgb(123, 224, 255);
 }
-
-
