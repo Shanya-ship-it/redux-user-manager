@@ -1,4 +1,3 @@
-
 import UsersList from './components/UsersList';
 import './main.css';
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import '../main.css'
 import user_img from './../data/user_img.png'
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { editSingleUser } from "../store/userListSlice";
 import UserInput from "./UserInput";

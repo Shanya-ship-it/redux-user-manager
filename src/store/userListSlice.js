@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import data from './../data/data.json'
+import data from './../data/data2.json'
 
 const userListSlice = createSlice({
     name: 'userList',
