@@ -10,7 +10,7 @@ const UsersList = () => {
   const list = useSelector((state) => state.list.list);
 
   const [visibleForm, setVisibleForm] = useState(false);
-  const [selectUser, setSelectUser] = useState(0);
+  const [selectUser, setSelectUser] = useState(-1);
 
   const selectedUser = list[selectUser];
 
