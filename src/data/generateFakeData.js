@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { random, floor } = Math;
 
-let dataCount = 100000;
+let dataCount = 1000000;
 
 const lastNames = [
   "Иванов",
@@ -97,10 +97,12 @@ const getRandomValue = (list) => list[floor(random() * list.length)];
 
 const data = [];
 for (let i = 0; i < dataCount; i++) {
+  const id = i + 1;
   const lastName = getRandomValue(lastNames);
   const firstName = getRandomValue(firstNames);
 
   data.push({
+    id: id,
     name: `${lastName} ${firstName}`,
     department: getRandomValue(departments),
     company: getRandomValue(companies),
@@ -108,4 +110,4 @@ for (let i = 0; i < dataCount; i++) {
   });
 }
 
-fs.writeFileSync("data2.json", JSON.stringify(data));
+fs.writeFileSync("data.json", JSON.stringify(data));

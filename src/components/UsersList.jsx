@@ -1,5 +1,5 @@
 import "../main.css";
-import user_icon from "../data/user_icon.png";
+import user_icon from "../data/user_icon2.svg";
 import { useSelector } from "react-redux";
 import EditUserForm from "./EditUserForm";
 import { useState } from "react";
@@ -12,13 +12,15 @@ const UsersList = () => {
   const [visibleForm, setVisibleForm] = useState(false);
   const [selectUser, setSelectUser] = useState(0);
 
+  const selectedUser = list[selectUser];
+
   const handleOnClick = (index) => {
     setVisibleForm(true);
     setSelectUser(index);
   };
 
   const Row = ({ index, style }) => (
-    <div style={style}>
+    <div style={{...style, backgroundColor: "white", }}>
       {
         <div
           className={selectUser === index ? "user__li selected" : "user__li"}
@@ -36,17 +38,23 @@ const UsersList = () => {
 
   return (
     <>
-      <List height={330} itemCount={list.length} itemSize={40} width={300}>
+      <List
+        height={350}
+        itemCount={list.length}
+        itemSize={35}
+        width={300}
+        style={{ border: "solid 1px rgb(163, 163, 163)" }}
+      >
         {Row}
       </List>
       <div>
         {visibleForm && (
           <EditUserForm
-            id={list[selectUser].id}
-            name={list[selectUser].name}
-            jobTitle={list[selectUser].jobTitle}
-            department={list[selectUser].department}
-            company={list[selectUser].company}
+            id={selectedUser.id}
+            name={selectedUser.name}
+            jobTitle={selectedUser.jobTitle}
+            department={selectedUser.department}
+            company={selectedUser.company}
           />
         )}
       </div>

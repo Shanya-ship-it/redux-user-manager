@@ -1,6 +1,5 @@
-import { useState } from "react";
 
-const UserInput = ({ labelTitle, handleOnChange, inputValue }) => {
+const UserInput = ({ labelTitle, onChange, inputValue }) => {
   return (
     <label className="labels">
       <span>{labelTitle}</span>
@@ -8,7 +7,7 @@ const UserInput = ({ labelTitle, handleOnChange, inputValue }) => {
         className="inputs"
         name=""
         type="text"
-        onChange={handleOnChange}
+        onChange={onChange}
         value={inputValue}
       />
     </label>
