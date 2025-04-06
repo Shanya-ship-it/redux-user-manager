@@ -30,7 +30,7 @@ const UsersList = () => {
           }}
         >
           <img className="user__icon" src={user_icon} alt="user__icon" />
-          <span>Пользователь {index + 1}</span>
+          <span>{list[index].name}</span>
         </div>
       }
     </div>
