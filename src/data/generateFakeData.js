@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { random, floor } = Math;
 
-let dataCount = 1000000;
+let dataCount = 10000;
 
 const lastNames = [
   "Иванов",
